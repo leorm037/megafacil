@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class BolaoController extends AbstractController
 {
     
-    #[Route('', name: 'app_bolao_index')]
+    #[Route('', name: 'index')]
     public function index(): Response
     {
         return $this->render('bolao/index.html.twig', [

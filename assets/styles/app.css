@@ -1,3 +1,85 @@
-body {
-    background-color: skyblue;
+:root {
+    --megafacil-texto: #a6e9d5;
+    --megafacil-background: #13795b;
+    --megafacil-background-secondary: #d2f4ea;
+}
+
+.bg-megafacil {
+    background-color: var(--megafacil-background)!important;
+}
+
+.bg-megafacil-secondary {
+    background-color: var(--megafacil-background-secondary);
+}
+
+.border-megafacil {
+    --bs-border-opacity: 1;
+    border-color: var(--megafacil-background-secondary)!important;
+}
+
+a.navbar-bg-megafacil {
+    color: var(--megafacil-texto)!important;
+    transition: all 0.3s;
+}
+
+a.navbar-bg-megafacil:hover {
+    color: #fff!important;
+}
+
+.navbar-bg-megafacil {
+    color: var(--megafacil-texto)!important;
+    border-color: var(--megafacil-texto)!important;
+    background-color: transparent;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: var(--megafacil-texto)!important;
+    transition: all 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fff!important;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: #fff!important;
+}
+
+.navbar-nav .nav-item .nav-link.active::before {
+    content: "[";
+    margin-right: 0px;
+}
+
+.navbar-nav .nav-item .nav-link.active::after {
+    content: "]";
+    margin-left: 0px;
+}
+
+.Icon {
+    display: inline-grid;
+    place-content: center;
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: -.125em;
+}
+
+.icon-rotate-45 {
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    display: inline-block;
+}
+
+.card-header, .card-footer {
+    background-color: var(--megafacil-background-secondary)!important;
+}
+
+label.required:after{
+   color: black;
+   content: "*";
+   margin-left: 2px;
+   font-weight: bold;
 }

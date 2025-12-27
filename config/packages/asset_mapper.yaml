@@ -2,7 +2,10 @@ framework:
     asset_mapper:
         # The paths to make available to the asset mapper.
         paths:
-            - assets/
+            node_modules/gasparesganga-jquery-loading-overlay/dist/: 'jquery-loading'
+            node_modules/bootstrap/dist/: 'bootstrap'
+            node_modules/jquery/dist/: 'jquery'
+            assets/: ''
         missing_import_mode: strict
 
 when@prod:
