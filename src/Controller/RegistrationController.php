@@ -22,6 +22,12 @@ class RegistrationController extends AbstractController
     public function __construct(private EmailVerifier $emailVerifier)
     {
     }
+    
+    #[Route('/agree-terms', name: 'app_agree_terms')]
+    public function agreeTerms(): Response
+    {
+        return $this->render('registration/agreeTerms.html.twig');
+    }
 
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
@@ -55,7 +61,7 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form,
+            'form' => $form,
         ]);
     }
 

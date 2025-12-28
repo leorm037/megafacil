@@ -691,11 +691,11 @@
       </trans-unit>
       <trans-unit id="6h2NNfX" resname="You should agree to our terms.">
         <source>You should agree to our terms.</source>
-        <target>__You should agree to our terms.</target>
+        <target>Você deve aceitar nossos termos.</target>
       </trans-unit>
       <trans-unit id="B7yoMOR" resname="Please enter a password">
         <source>Please enter a password</source>
-        <target>__Please enter a password</target>
+        <target>Por favor, informe uma senha</target>
       </trans-unit>
       <trans-unit id="_OmnKuR" resname="Your password should be at least {{ limit }} characters">
         <source>Your password should be at least {{ limit }} characters</source>

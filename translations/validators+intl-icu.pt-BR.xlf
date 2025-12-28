@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="6h2NNfX" resname="You should agree to our terms.">
         <source>You should agree to our terms.</source>
-        <target>__You should agree to our terms.</target>
+        <target>Você deve aceitar nossos termos.</target>
       </trans-unit>
       <trans-unit id="B7yoMOR" resname="Please enter a password">
         <source>Please enter a password</source>
@@ -24,6 +24,18 @@
       <trans-unit id="B9r0Hn5" resname="Error">
         <source>Error</source>
         <target>__Error</target>
+      </trans-unit>
+      <trans-unit id="475.upF" resname="Você precisa aceitar os nossos termos.">
+        <source>Você precisa aceitar os nossos termos.</source>
+        <target>__Você precisa aceitar os nossos termos.</target>
+      </trans-unit>
+      <trans-unit id="uvdeF2P" resname="Por favor, informe a senha">
+        <source>Por favor, informe a senha</source>
+        <target>__Por favor, informe a senha</target>
+      </trans-unit>
+      <trans-unit id="eBO5wmi" resname="Sua senha deve ter no mínimo {{ limit }} caracteres">
+        <source>Sua senha deve ter no mínimo {{ limit }} caracteres</source>
+        <target>__Sua senha deve ter no mínimo {{ limit }} caracteres</target>
       </trans-unit>
     </body>
   </file>

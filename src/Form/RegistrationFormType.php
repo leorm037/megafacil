@@ -6,7 +6,7 @@ use App\Entity\Usuario;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,30 +21,49 @@ class RegistrationFormType extends AbstractType
     {
         $builder
                 ->add('nome', TextType::class, [
-                    'label' => 'Nome'
+                    'label' => 'Nome',
+                    'required' => true,
+                    'attr' => [
+                        'autofocus' => true
+                    ]
                 ])
                 ->add('email', EmailType::class, [
-                    'label' => 'E-mail'
+                    'label' => 'E-mail',
+                    'required' => true
                 ])
                 ->add('agreeTerms', CheckboxType::class, [
-                    'label' => 'Aceita os termos',
+                    'label' => 'Eu concordo com os termos de serviço',
                     'mapped' => false,
                     'constraints' => [
                         new IsTrue(message: 'You should agree to our terms.'),
                     ],
                 ])
-                ->add('plainPassword', PasswordType::class, [
-                    // instead of being set onto the object directly,
+                ->add('plainPassword', RepeatedType::class, [
                     'mapped' => false,
-                    'attr' => ['autocomplete' => 'new-password'],
-                    'constraints' => [
-                        new NotBlank(message: 'Please enter a password'),
-                        new Length(
-                                min: 6,
-                                minMessage: 'Your password should be at least {{ limit }} characters',
-                                max: 4096
-                        ),
+                    'required' => true,
+                    'options' => [
+                        'attr' => [
+                            'autocomplete' => 'new-password'
+                        ]
                     ],
+                    'type' => \Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
+                    'invalid_message' => 'A confirmação da senha não corresponde com a senha informada.',
+                    'first_options' => [
+                        'label' => 'Senha',
+                        'constraints' => [
+                            new NotBlank(message: 'Por favor, informe a senha'),
+                            new Length(
+                                min: 6,
+                                minMessage: 'Sua senha deve ter no mínimo {{ limit }} caracteres',
+                                max: 4096
+                            ),
+                            new \Symfony\Component\Validator\Constraints\PasswordStrength(),
+                            new \Symfony\Component\Validator\Constraints\NotCompromisedPassword()
+                        ]
+                    ],
+                    'second_options' => [
+                        'label' => 'Confirmar senha'
+                    ]
                 ])
         ;
     }
