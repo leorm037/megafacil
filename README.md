@@ -1,7 +1,23 @@
 # Mega Fácil
 Projeto de estudo Symfony 8
 
-# Symfony
+
+# Ambiente de desenvolvimento
+
+## 🐧 Linux
+```bash
+sudo apt update
+sudo apt install -y php8.4-cli php8.4-zip php8.4-redis php8.4-xml php8.4-curl php8.4-pdo
+```
+
+### 🎼 Composer
+https://getcomposer.org/download/
+
+### Node
+https://nodejs.org/pt-br/download
+
+
+# 🎼 Symfony
 ## Criar um novo projeto
 ```bash
 composer create-project symfony/skeleton:"8.0.*" my_project_directory
@@ -10,14 +26,14 @@ composer require webapp
 php bin/console about
 ```
 
-## NPM
+## Node
 ```bash
 npm init -y
 npm install bootstrap
 npm install gasparesganga-jquery-loading-overlay
 ```
 
-## Loading
+## ⌛️ Loading
 https://loading.io/icon/?kw=luck
 
 ## AssetMapper
@@ -25,12 +41,12 @@ https://loading.io/icon/?kw=luck
 php bin/console asset-map:compile
 ```
 
-## Icones
+## 😀 Icones
 ```bash
 composer require symfony/ux-icons
 ```
 
-## Publicar em produção
+## 📦️ Publicar em produção
 ```bash
 npm update
 composer install --no-dev --optimize-autoloader
