@@ -1,0 +1,13 @@
+name: Project Automation
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled]
+  project_card:
+    types: [created, moved]
+
+jobs:
+  automate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: goldberc/better-project-automation@v1
