@@ -1,0 +1,11 @@
+rules:
+  - name: Sync status of bug sub-issues
+    on:
+      - issues.opened
+    if:
+      - has_label: bug
+      - is_sub_issue: true
+    then:
+      - set_field:
+          field: Status
+          value: "{{ parent.Status }}"
